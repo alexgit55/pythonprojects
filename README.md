@@ -6,7 +6,7 @@ As the repository grows, I'll keep an updated overview of the projects here
 
 ## Mosh's Python Projects - My code for the python projects from Mosh's courses
 
-diceroller 
+dice_roller 
 - application for rolling a die (random int from 1-6) 
 * asks the user for how many times they want to roll
 + continues to prompt until exited by user
