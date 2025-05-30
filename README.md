@@ -19,3 +19,8 @@ number_guessing
 + doesn't allow invalid input in the program, repeats until valid input is given
 + limits the number of chances a player gets to guess the number
 + stores game history and prints number of games played and fewest guesses
+
+validation
+- module containing validation functions to be used in other scripts
+* contains function to check if user input matches character in tuple
++ contains function to verify input is a valid integer value
