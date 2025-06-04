@@ -2,9 +2,31 @@ import random
 import validation
 
 def GenerateRandomNumber(lowValue, highValue):
+  """
+  Generates a random integer between the specified low and high values (inclusive).
+
+  Args:
+      lowValue (int): The lower bound of the range.
+      highValue (int): The upper bound of the range.
+
+  Returns:
+      int: A random integer between lowValue and highValue.
+  """
   return random.randint(lowValue, highValue)
 
 def SetNumberRange():
+  """
+  Allows the user to set the range of numbers for the guessing game.
+
+  If the user chooses to set the range manually, they are prompted to enter
+  a low value and a high value. Input is validated to ensure the high value
+  is greater than the low value.
+
+  If the user chooses not to set the range manually, the range defaults to 1-100.
+
+  Returns:
+      tuple: A tuple containing the low value and high value of the number range.
+  """
   manualRange = validation.ValidateUserInput("Would you like to set the number range? If not, range will be 1-100 (y/n): ",('y','n'))
   lowValue=0
   highValue=-1
@@ -23,6 +45,20 @@ def SetNumberRange():
   return (lowValue, highValue)
 
 def PlayGame(numberToGuess, maxTurns, gameHistory):
+  """
+  Plays a number guessing game with the user.
+
+  The function takes the number to guess, the maximum number of turns allowed,
+  and a list to store the game history. It prompts the user for guesses,
+  provides feedback on whether the guess is too high or too low, and tracks
+  the number of attempts. The game continues until the user guesses correctly
+  or runs out of turns.
+
+  Args:
+      numberToGuess (int): The secret number the user is trying to guess.
+      maxTurns (int): The maximum number of guesses the user is allowed.
+      gameHistory (list): A list to store the number of attempts taken in each game.
+  """
   count=0
   while maxTurns > 0:
     if maxTurns == 1:
