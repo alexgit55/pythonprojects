@@ -2,9 +2,21 @@ import random
 import validation
 
 def DiceRoll():
+  """
+  Simulates a single dice roll.
+
+  Returns:
+      int: A random integer between 1 and 6, representing the result of the dice roll.
+  """
   return random.randint(1,6)
 
 def GetDiceRollCount():
+  """
+  Gets the desired number of dice rolls from the user.
+
+  Returns:
+      int: The number of dice rolls the user wants, or 0 to quit.
+  """
   playerChoice=-1
   while playerChoice < 0:
       playerChoice=validation.GetIntValue("Enter the number of dice rolls desired: (0 to quit) ")
@@ -13,9 +25,20 @@ def GetDiceRollCount():
 
   return playerChoice
 
-def DisplayDiceTotals(diceTotals):
+def DisplayDiceTotals(diceTotals, rollCount):
+  """
+  Displays the totals for each dice value rolled.
+
+  Args:
+      diceTotals (dict): A dictionary containing the count of each dice value (1-6).
+      rollCount (int): The total number of dice rolls.
+  """
+  text="dice"
+  if rollCount == 1:
+    text="die"
   for i in diceTotals:
     print(f"{i}: {diceTotals[i]}")
+  print(f"You rolled {rollCount} {text}")
 
 playAgain='y'
 rollList=[]
@@ -40,9 +63,4 @@ while playAgain=='y':
   playAgain=validation.ValidateUserInput("Would you like to roll again? (y/n): ",('y','n'))
 
 print("Thanks for playing!")
-text="dice"
-if rollCount == 1:
-  text="die"
-
-DisplayDiceTotals(diceTotals)
-print(f"You rolled {rollCount} {text}")
+DisplayDiceTotals(diceTotals, rollCount)
