@@ -1,7 +1,9 @@
 import os
 
 def clear_console():
-  # Clear console based on the operating system
+  """
+  Clears the console screen.
+  """
   if os.name == 'nt':
       os.system('cls')  # For Windows
   else:
