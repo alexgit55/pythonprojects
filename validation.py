@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+"""validation.py contains validation functions to be used to verify input data from the user"""
+
 def ValidateUserInput(text, validChoices):
   """
   Prompts the user for input until a valid choice from the provided list is entered.
