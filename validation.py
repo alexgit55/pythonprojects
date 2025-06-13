@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """validation.py contains validation functions to be used to verify input data from the user"""
 
 def ValidateUserInput(text, validChoices):
@@ -13,6 +12,10 @@ def ValidateUserInput(text, validChoices):
   Returns:
     The user's choice (string, lowercased).
   """
+
+  if not hasattr(validChoices,'__iter__'):
+    raise TypeError("ValidChoices must be iterable")
+
   userChoice='userChoice'
   while userChoice.lower() not in validChoices:
     userChoice=input(text)
@@ -40,3 +43,10 @@ def GetIntValue(text):
         print("That is not a valid number")
 
   return intValue
+
+if __name__ == '__main__':
+  userInput=ValidateUserInput("Please select from the following choices (y/n): ", ('y','n'))
+  print(userInput)
+
+  userInt=GetIntValue("Enter a value to verify functionality: ")
+  print(userInt)
