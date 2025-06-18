@@ -40,7 +40,7 @@ rock_paper_scissors
 + utilizes utility module to clear output during the game
 
 todo_list
-- application a basic todo list
+- application for a basic todo list
 * Application presents a menu where user and show current tasks, add a new task or complete a task
 + User can add name of the task as well as a deadline, program will check if task already exists
 + User can complete a task by enter item number from list
