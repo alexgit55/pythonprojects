@@ -15,7 +15,7 @@ utility
 - module containing variety of functions to be used in other scripts
 * contains function to clear the output screen
 
-## Mosh's Python Projects - My code for the python projects from Mosh's courses
+## Assorted Python Projects - My code for assorted python projects
 
 dice_roller 
 - application for rolling a die (random int from 1-6) 
@@ -38,3 +38,12 @@ rock_paper_scissors
 + game will repeat until user chooses not to, at the end will report how many times each player won a game
 + utilizes validation module to verify input from user
 + utilizes utility module to clear output during the game
+
+todo_list
+- application a basic todo list
+* Application presents a menu where user and show current tasks, add a new task or complete a task
++ User can add name of the task as well as a deadline, program will check if task already exists
++ User can complete a task by enter item number from list
++ It validates whether task removal is allowed: if empty list or out of range it won't be allowed
++ Saves tasks to textfile once complete, reads in from textfile when opened
++ creates textfile if one doesn't exist yet
